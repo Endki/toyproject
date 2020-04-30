@@ -1,0 +1,15 @@
+package server;
+
+public class ClientManagerThread extends Thread{
+
+	private Socket m_socket;
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+	}
+	
+	
+}

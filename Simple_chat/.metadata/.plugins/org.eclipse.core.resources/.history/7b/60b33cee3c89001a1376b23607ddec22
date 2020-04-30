@@ -1,0 +1,5 @@
+package server;
+
+public class ChatServer {
+	public static ArrayList<PrintWriter> m_OutputList
+}

@@ -1,0 +1,15 @@
+package server;
+
+import java.net.ServerSocket;
+
+public class MainServer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try {
+			ServerSocket s_socket=new ServerSocket(8888);
+		}
+	}
+
+}

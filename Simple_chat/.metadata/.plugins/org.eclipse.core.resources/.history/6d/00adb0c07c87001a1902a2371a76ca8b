@@ -1,0 +1,12 @@
+package SWmaestro;
+
+import java.io.IOException;
+
+public class SW01 {
+
+	public static void main(String[] args) throws IOException{
+		
+
+	}
+
+}

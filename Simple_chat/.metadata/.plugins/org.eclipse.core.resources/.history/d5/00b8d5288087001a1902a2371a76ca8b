@@ -1,0 +1,15 @@
+package SWmaestro;
+
+import java.io.IOException;
+
+public class SW02 {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		
+		
+
+	}
+
+}

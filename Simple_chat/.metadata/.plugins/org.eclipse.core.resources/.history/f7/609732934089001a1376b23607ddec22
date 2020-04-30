@@ -1,0 +1,23 @@
+package client;
+
+import java.io.IOException;
+import java.net.Socket;
+
+public class ChatClient {
+	public static String UserID;
+	
+	public static void main(String[] args) {
+		try {
+			Socket c_socket = new Socket("1.236.143.171",8888);
+			
+			ReceiveThread rec_thread =new ReceiveThread();
+			rec_thread.setSocket(c_socket);
+			
+			send_thread.start();
+			
+			
+		}catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+}

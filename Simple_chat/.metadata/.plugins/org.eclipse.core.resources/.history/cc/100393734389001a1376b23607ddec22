@@ -1,0 +1,26 @@
+package client;
+
+import java.net.Socket;
+
+public class ReceiveThread extends Thread {
+	private Socket m_Socket;
+	
+	
+	
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+		
+	}
+
+
+
+
+
+	public void setSocket(Socket _socket) {
+		
+	}
+}

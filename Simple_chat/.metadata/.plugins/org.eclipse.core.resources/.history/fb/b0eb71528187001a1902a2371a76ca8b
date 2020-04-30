@@ -1,0 +1,12 @@
+package SWmaestro;
+
+import java.io.IOException;
+
+public class SW03 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

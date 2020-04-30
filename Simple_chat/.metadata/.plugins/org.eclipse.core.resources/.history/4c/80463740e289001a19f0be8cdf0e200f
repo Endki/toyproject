@@ -1,0 +1,33 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class B1500 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String[] input=br.readLine().split(" ");
+		
+		int s=Integer.parseInt(input[0]);
+		int k=Integer.parseInt(input[1]);
+		double[] arr=new double[(int)k];
+		int sum=1;
+		
+		int mok=s/k;
+		int namu=s%k;
+		
+		for(int i=0;i<=mok;i++) {
+			sum*=mok;
+		}
+		
+		for(int i=0;i<namu;i++) {
+			
+		}
+		
+		
+				
+		System.out.println(sum);
+	}
+
+}

@@ -1,0 +1,50 @@
+package server;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class ClientManagerThread extends Thread{
+
+	private Socket m_socket;
+	private String m_ID;
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+		try {
+			BufferedReader tmpbuffer=new BufferedReader(new InputStreamReader(m_socket.getInputStream()));
+			
+			String text;
+			
+			
+			
+			while(true) {
+				text=tmpbuffer.readLine();
+				
+				if(text==null) {
+					System.out.println(m_ID + "이(가) 나갔습니다.");
+					for(int i=0;i<ChatServer.m_OutputList.size();i++) {
+						ChatServer.m_OutputList.get(i).println(m_ID+"이(가) 나갔습니다.");
+						ChatServer.m_OutputList.get(i).flush();
+					}
+					break;
+				}
+				
+				
+				
+			}
+			
+		}catch (IOException e) {
+			// TODO: handle exception
+		}
+		
+		
+		
+	}
+	
+	
+}

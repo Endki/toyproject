@@ -1,0 +1,13 @@
+package server;
+
+public class SendThread extends Thread{
+
+	private Socket m_Socket;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

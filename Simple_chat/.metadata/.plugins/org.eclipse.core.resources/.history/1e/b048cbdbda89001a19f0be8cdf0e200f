@@ -1,0 +1,10 @@
+import java.io.IOException;
+
+public class B1834 {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+
+	}
+
+}

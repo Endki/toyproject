@@ -1,4 +1,4 @@
-package application;
+package ch.make.todolist;
 	
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,12 +12,12 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 //			BorderPane root = new BorderPane();
-			Parent root=FXMLLoader.load(getClass().getResource("Root.fxml"));
+			Parent root=FXMLLoader.load(getClass().getResource("TextView.fxml"));
 //			Scene scene = new Scene(root,400,400);
 			Scene scene = new Scene(root);
 			
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setTitle("TEST");
+			primaryStage.setTitle("ToDoList");
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.show();

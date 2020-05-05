@@ -6,7 +6,7 @@
 
 1.JAVA SimPle_chat
 -----------------
-자바를 쓰레드를 이용한 간단한 채팅 프로그램
+자바를 쓰레드를 이용한 간단한 채팅 프로그램    
 추후 JAVA_FX 이용한 UI 개발 예정
 
 ![Java_chat](./image/JAVA_chat.PNG)

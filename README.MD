@@ -11,7 +11,7 @@
 Server-Client 간 통신    
 Server 1대 - 클라이언트 여러대 간 통신 가능
 
-
+![Java_chat](./image/Java_chat.PNG)
 
 2.ToDoList - java
 -----------------

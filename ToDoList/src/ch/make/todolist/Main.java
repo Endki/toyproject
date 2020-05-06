@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 //			BorderPane root = new BorderPane();
-			Parent root=FXMLLoader.load(getClass().getResource("TextView.fxml"));
+			Parent root=FXMLLoader.load(getClass().getResource("Main.fxml"));
 //			Scene scene = new Scene(root,400,400);
 			Scene scene = new Scene(root);
 			
@@ -21,6 +21,8 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.show();
+			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

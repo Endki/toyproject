@@ -23,34 +23,34 @@ public class RandomResult extends JFrame {
 
 	public RandomResult() throws IOException {
 		
-		//////////////////////////////////í• ì¼ ì¶”ì²œ í™•ì¸ì°½ ì „ì²´ í”„ë ˆì„
+		//////////////////////////////////ÇÒÀÏ ÃßÃµ È®ÀÎÃ¢ ÀüÃ¼ ÇÁ·¹ÀÓ
 		setBounds(100, 100, 475, 590);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 240));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		
-		//í• ì¼ ì¶”ì²œ í™•ì¸ì°½ ì œëª© ë ˆì´ë¸”
+		//ÇÒÀÏ ÃßÃµ È®ÀÎÃ¢ Á¦¸ñ ·¹ÀÌºí
 		JLabel label = new JLabel("\uC624\uB298\uC758 \uD560 \uC77C");
 		label.setBackground(new Color(128, 128, 128));
 		label.setForeground(new Color(128, 128, 128));
-		label.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
+		label.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
 		label.setBounds(139, 17, 178, 70);
 		contentPane.add(label);
 		
-		//í• ì¼ ì¶”ì²œ í™•ì¸ì°½ í¬ì¶˜ì¿ í‚¤ ì‚¬ì§„
+		//ÇÒÀÏ ÃßÃµ È®ÀÎÃ¢ Æ÷ÃáÄíÅ° »çÁø
 		JLabel lblNewLabel = new JLabel("\uC624\uB298\uC758 \uD560 \uC77C");
 		lblNewLabel.setIcon(new ImageIcon("buttons/KakaoTalk_20170518_191828007.png"));
 		lblNewLabel.setBounds(0, 99, 457, 336);
 		contentPane.add(lblNewLabel);
 		
-		//í• ì¼ ì¶”ì²œ í™•ì¸ì°½ ë‚˜ê°€ê¸° ë²„íŠ¼
+		//ÇÒÀÏ ÃßÃµ È®ÀÎÃ¢ ³ª°¡±â ¹öÆ°
 		JButton btnNewButton = new JButton("\uB098\uAC00\uAE30");
 		btnNewButton.setForeground(new Color(128, 128, 128));
-		btnNewButton.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 20));
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 20));
 		btnNewButton.setBounds(164, 447, 119, 47);
 		contentPane.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {//ë²„íŠ¼ í´ë¦­ì‹œ ìˆ˜í–‰ ë™ì‘
+		btnNewButton.addActionListener(new ActionListener() {//¹öÆ° Å¬¸¯½Ã ¼öÇà µ¿ÀÛ
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
@@ -90,11 +90,11 @@ public class RandomResult extends JFrame {
 				if(s.charAt(i)==':'&&s.charAt(i+1)==':'){
 					countindex++;
 				}
-				if(countindex==3&&s.charAt(i+2)=='ì™„'){
+				if(countindex==3&&s.charAt(i+2)=='¿Ï'){
 					countindex=-1;
 					break;
 				}
-				else if(countindex==3&&s.charAt(i+2)=='ì§„'){
+				else if(countindex==3&&s.charAt(i+2)=='Áø'){
 					break;
 				}
 			}
@@ -109,7 +109,7 @@ public class RandomResult extends JFrame {
 				
 				JLabel tolabel = new JLabel(s1);
 				tolabel.setBounds(0, 100, 457, 336);
-				tolabel.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 70));
+				tolabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 70));
 				lblNewLabel.add(tolabel);
 				break;
 			}

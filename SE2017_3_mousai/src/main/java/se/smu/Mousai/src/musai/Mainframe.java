@@ -21,13 +21,13 @@ public class Mainframe extends JFrame {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Mainframe frame = new Mainframe();
 		frame.setVisible(true);
-		///ì•ŒëŒ
+		///¾Ë¶÷
 		File alarm = new File("alarmtime.dt");
 		int month = 0, date = 0, hour = 0, counter = 0;
 		while (true) {
 			FileReader alarmdt = new FileReader(alarm);
 			Calendar cal = Calendar.getInstance();
-			// ì›” êµ¬í•˜ê¸°
+			// ¿ù ±¸ÇÏ±â
 			for (int i = 0; i < 3; i++) {
 				int alstd = alarmdt.read();
 				if (alstd == 9) {
@@ -38,7 +38,7 @@ public class Mainframe extends JFrame {
 				month += alstd;
 			}
 			
-			// ì¼ êµ¬í•˜ê¸°
+			// ÀÏ ±¸ÇÏ±â
 			for (int i = 0; i < 3; i++) {
 				int alstd = alarmdt.read();
 				if (alstd == 9) {
@@ -49,7 +49,7 @@ public class Mainframe extends JFrame {
 				date += alstd;
 			}
 			
-			// ì‹œ êµ¬í•˜ê¸°
+			// ½Ã ±¸ÇÏ±â
 			for (int i = 0; i < 3; i++) {
 				int alstd = alarmdt.read();
 				if (alstd == 10) {
@@ -82,7 +82,7 @@ public class Mainframe extends JFrame {
 	// Create the frame.
 	public Mainframe() throws IOException {
 		
-		// ì „ì²´ í”„ë ˆì„
+		// ÀüÃ¼ ÇÁ·¹ÀÓ
 		super("Mousai");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
@@ -90,7 +90,7 @@ public class Mainframe extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 
-		/////////////////////////////////////// ê³¼ëª© íŒ¨ë„
+		/////////////////////////////////////// °ú¸ñ ÆĞ³Î
 		JPanel panel = new JPanel();
 		panel.setForeground(new Color(255, 255, 240));
 		panel.setBackground(new Color(255, 255, 240));
@@ -98,29 +98,29 @@ public class Mainframe extends JFrame {
 		panel.setLayout(null);
 		contentPane.add(panel);
 
-		// ê³¼ëª© ì œëª© ë ˆì´ë¸”
+		// °ú¸ñ Á¦¸ñ ·¹ÀÌºí
 		JLabel lblNewLabel = new JLabel("\uACFC\uBAA9 List");
 		lblNewLabel.setForeground(new Color(128, 128, 128));
-		lblNewLabel.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 25));
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25));
 		lblNewLabel.setBounds(132, 12, 116, 39);
 		panel.add(lblNewLabel);
 
-		// ê³¼ëª© ì¶”ê°€ ë²„íŠ¼
+		// °ú¸ñ Ãß°¡ ¹öÆ°
 		JButton btnNewButton_3 = new JButton();
 		btnNewButton_3.setIcon(new ImageIcon("buttons/KakaoTalk_20170518_191838807.png"));
 		btnNewButton_3.setBackground(new Color(255, 255, 255));
 		btnNewButton_3.setBounds(297, 12, 39, 39);
 		panel.add(btnNewButton_3);
-		btnNewButton_3.addActionListener(new ActionListener() {// ë²„íŠ¼ í´ë¦­ì‹œ ìˆ˜í–‰ ë™ì‘
+		btnNewButton_3.addActionListener(new ActionListener() {// ¹öÆ° Å¬¸¯½Ã ¼öÇà µ¿ÀÛ
 			public void actionPerformed(ActionEvent e) {
-				NewLecture nl = new NewLecture();// ê³¼ëª© ì¶”ê°€ ìƒì„±
+				NewLecture nl = new NewLecture();// °ú¸ñ Ãß°¡ »ı¼º
 				nl.setVisible(true);
 				dispose();
 			}
 		});
 
-		///////////// ê³¼ëª© í‘œì‹œ
-		// íŒ¨ë„
+		///////////// °ú¸ñ Ç¥½Ã
+		// ÆĞ³Î
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 61, 356, 189);
 		panel.add(panel_3);
@@ -129,7 +129,7 @@ public class Mainframe extends JFrame {
 		panel_3.setBackground(new Color(255, 255, 240));
 		panel_3.setBorder(new LineBorder(Color.black));
 
-		// íŒŒì¼ ì½ê³  ì¶œë ¥
+		// ÆÄÀÏ ÀĞ°í Ãâ·Â
 		File data = new File("data.dt");
 		BufferedReader in = new BufferedReader(new FileReader(data));
 		String s;
@@ -153,13 +153,13 @@ public class Mainframe extends JFrame {
 		}
 		in.close();
 
-		// ê³¼ëª© ê¸¸ì–´ì§ˆ ë•Œ ìŠ¤í¬ë¡¤ ì¶”ê°€
+		// °ú¸ñ ±æ¾îÁú ¶§ ½ºÅ©·Ñ Ãß°¡
 		JScrollPane sp = new JScrollPane(panel_3, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		sp.setBounds(12, 61, 356, 189);
 		panel.add(sp);
 
-		///////////////////////////////////////// ì„¸ë¶€ì‚¬í•­ íŒ¨ë„
+		///////////////////////////////////////// ¼¼ºÎ»çÇ× ÆĞ³Î
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
 		panel_2.setForeground(new Color(255, 255, 240));
@@ -167,15 +167,15 @@ public class Mainframe extends JFrame {
 		panel_2.setBounds(5, 325, 770, 225);
 		contentPane.add(panel_2);
 
-		// ì„¸ë¶€ì‚¬í•­ ì œëª© ë ˆì´ë¸”
+		// ¼¼ºÎ»çÇ× Á¦¸ñ ·¹ÀÌºí
 		JLabel lblTodolist_2 = new JLabel("TodoList \uC138\uBD80\uC0AC\uD56D");
 		lblTodolist_2.setForeground(new Color(128, 128, 128));
-		lblTodolist_2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 25));
+		lblTodolist_2.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25));
 		lblTodolist_2.setBounds(263, 12, 244, 39);
 		panel_2.add(lblTodolist_2);
 
-		///////////// í• ì¼ ì„¸ë¶€ì‚¬í•­ í‘œì‹œ
-		// íŒ¨ë„
+		///////////// ÇÒÀÏ ¼¼ºÎ»çÇ× Ç¥½Ã
+		// ÆĞ³Î
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(12, 61, 746, 154);
 		panel_2.add(panel_5);
@@ -187,14 +187,14 @@ public class Mainframe extends JFrame {
 		JLabel jl = new JLabel();
 		panel_5.add(jl);
 
-		// ê³¼ëª© ê¸¸ì–´ì§ˆ ë•Œ ìŠ¤í¬ë¡¤ ì¶”ê°€
+		// °ú¸ñ ±æ¾îÁú ¶§ ½ºÅ©·Ñ Ãß°¡
 
 		JScrollPane sptddt = new JScrollPane(panel_5, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		sptddt.setBounds(12, 61, 746, 154);
 		panel_2.add(sptddt);
 
-		//////////////////////////////////////// to do íŒ¨ë„
+		//////////////////////////////////////// to do ÆĞ³Î
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setForeground(new Color(255, 255, 240));
@@ -203,30 +203,30 @@ public class Mainframe extends JFrame {
 		// panel_1.setBorder(new LineBorder(Color.gray));
 		contentPane.add(panel_1);
 
-		// to do ì œëª© ë¼ë²¨
+		// to do Á¦¸ñ ¶óº§
 		JLabel lblTodolist_1 = new JLabel("ToDoList");
 		lblTodolist_1.setForeground(new Color(128, 128, 128));
 		lblTodolist_1.setBackground(new Color(30, 144, 255));
-		lblTodolist_1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 25));
+		lblTodolist_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 25));
 		lblTodolist_1.setBounds(75, 12, 112, 39);
 		panel_1.add(lblTodolist_1);
 
-		// to do ì¶”ê°€ ë²„íŠ¼
+		// to do Ãß°¡ ¹öÆ°
 		JButton button = new JButton();
-		button.setIcon(new ImageIcon("buttons/KakaoTalk_20170518_191838807.png"));// ì•„ì´ì½˜
-																					// ì´ë¯¸ì§€
-																					// ìœ„ì¹˜
+		button.setIcon(new ImageIcon("buttons/KakaoTalk_20170518_191838807.png"));// ¾ÆÀÌÄÜ
+																					// ÀÌ¹ÌÁö
+																					// À§Ä¡
 		button.setBackground(Color.white);
 		button.setBounds(185, 12, 39, 39);
 		panel_1.add(button);
-		button.addActionListener(new ActionListener() {// ë²„íŠ¼ ëˆ„ë¥¼ì‹œ ìˆ˜í–‰ ë™ì‘
+		button.addActionListener(new ActionListener() {// ¹öÆ° ´©¸¦½Ã ¼öÇà µ¿ÀÛ
 			public void actionPerformed(ActionEvent arg0) {
 				NewToDo rf = null;
 				try {
 					rf = new NewToDo();
 				} catch (IOException e) {
 					e.printStackTrace();
-				} // NewToDoìƒì„±
+				} // NewToDo»ı¼º
 				rf.setVisible(true);
 				dispose();
 			}
@@ -237,19 +237,19 @@ public class Mainframe extends JFrame {
 		panel_1.add(checkBox);
 
 		
-		// to do ì •ë ¬ê¸°ëŠ¥ ë°•ìŠ¤
+		// to do Á¤·Ä±â´É ¹Ú½º
 		JComboBox<String> comboBox_1 = new JComboBox<String>();
 		comboBox_1.setBounds(230, 10, 65, 30);
-		comboBox_1.addItem("ì „ì²´");
-		comboBox_1.addItem("ì§„í–‰ì¤‘");
-		comboBox_1.addItem("ì´ë¦„");
-		comboBox_1.addItem("ë§ˆê°ì¼");
-		comboBox_1.addItem("ì™„ë£Œ");
-		comboBox_1.addItem("ëë‚¸ì¼");
+		comboBox_1.addItem("ÀüÃ¼");
+		comboBox_1.addItem("ÁøÇàÁß");
+		comboBox_1.addItem("ÀÌ¸§");
+		comboBox_1.addItem("¸¶°¨ÀÏ");
+		comboBox_1.addItem("¿Ï·á");
+		comboBox_1.addItem("³¡³½ÀÏ");
 		panel_1.add(comboBox_1);
 
-		///////////// í• ì¼ í‘œì‹œ
-		// íŒ¨ë„
+		///////////// ÇÒÀÏ Ç¥½Ã
+		// ÆĞ³Î
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(12, 61, 356, 189);
 		panel_1.add(panel_4);
@@ -283,7 +283,7 @@ public class Mainframe extends JFrame {
 						break;
 					}
 				}
-				if (std1.charAt(goingindex + 2) == 'ì™„') {
+				if (std1.charAt(goingindex + 2) == '¿Ï') {
 					std1 = std1.replaceFirst(" ", "a");
 				}
 			}
@@ -291,7 +291,7 @@ public class Mainframe extends JFrame {
 			std1 = "";
 			k++;
 		}
-		for (int a = 0; a < k; a++) {// íŒ¨ë„ ë²„íŠ¼ì¶”ê°€
+		for (int a = 0; a < k; a++) {// ÆĞ³Î ¹öÆ°Ãß°¡
 			if(str1[a].charAt(0)=='a'){
 				continue;
 			}
@@ -318,11 +318,11 @@ public class Mainframe extends JFrame {
 	         });
 			for(int i = 0; i<str1[a].length();i++){
 				if(str1[a].charAt(i+1)=='<'&&str1[a].charAt(i+2)=='/'&&str1[a].charAt(i+3)=='h'&&str1[a].charAt(i+4)=='t'&&str1[a].charAt(i+5)=='m'&&str1[a].charAt(i+6)=='l'&&str1[a].charAt(i+7)=='>'){
-					if(str1[a].charAt(i-2)=='ìš°'&&str1[a].charAt(i)=='ìš”'){
+					if(str1[a].charAt(i-2)=='¿ì'&&str1[a].charAt(i)=='¿ä'){
 						conttd.setBackground(Color.RED);
 						break;
 					}
-					else if(str1[a].charAt(i)=='ìš”'){
+					else if(str1[a].charAt(i)=='¿ä'){
 						conttd.setBackground(Color.BLUE);
 						break;
 					}
@@ -372,7 +372,7 @@ public class Mainframe extends JFrame {
 			panel_4.add(conttd);
 		}
 
-		// ì •ë ¬ë²„íŠ¼
+		// Á¤·Ä¹öÆ°
 		JButton btnSort = new JButton("SORT");
 		btnSort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -380,7 +380,7 @@ public class Mainframe extends JFrame {
 				panel_4.updateUI();
 				
 				try {
-					// íŒŒì¼ ì½ê³  ì¶œë ¥
+					// ÆÄÀÏ ÀĞ°í Ãâ·Â
 					File datatd = new File("datatd.dt");
 					BufferedReader intd = new BufferedReader(new FileReader(datatd));
 					String std;
@@ -410,7 +410,7 @@ public class Mainframe extends JFrame {
 									break;
 								}
 							}
-							if (std1.charAt(goingindex + 2) == 'ì™„') {
+							if (std1.charAt(goingindex + 2) == '¿Ï') {
 								std1 = std1.replaceFirst(" ", "a");
 							}
 						}
@@ -419,27 +419,27 @@ public class Mainframe extends JFrame {
 						std1 = "";
 						k++;
 					}
-					if (comboBox_1.getSelectedItem() == "ì „ì²´") {
+					if (comboBox_1.getSelectedItem() == "ÀüÃ¼") {
 						comboindex = 0;
-					} else if (comboBox_1.getSelectedItem() == "ì§„í–‰ì¤‘") {
+					} else if (comboBox_1.getSelectedItem() == "ÁøÇàÁß") {
 						comboindex = 1;
-					} else if (comboBox_1.getSelectedItem() == "ì´ë¦„") {
+					} else if (comboBox_1.getSelectedItem() == "ÀÌ¸§") {
 						comboindex = 2;
-					} else if (comboBox_1.getSelectedItem() == "ë§ˆê°ì¼") {
+					} else if (comboBox_1.getSelectedItem() == "¸¶°¨ÀÏ") {
 						comboindex = 3;
-					} else if (comboBox_1.getSelectedItem() == "ì™„ë£Œ") {
+					} else if (comboBox_1.getSelectedItem() == "¿Ï·á") {
 						comboindex = 4;
-					} else if (comboBox_1.getSelectedItem() == "ëë‚¸ì¼") {
+					} else if (comboBox_1.getSelectedItem() == "³¡³½ÀÏ") {
 						comboindex = 5;
 					}
 					switch (comboindex) {
-						case 0:// ì „ì²´
+						case 0:// ÀüÃ¼
 							for (counter = 0; counter < k; counter++) {
 								str2[counter] = str1[counter];
 							}
 							break;
 							
-						case 1:// ì§„í–‰ì¤‘
+						case 1:// ÁøÇàÁß
 							for (int j = 0; j < k; j++) {
 								for (int i = 0; i < str1[j].length(); i++) {
 									if (str1[j].charAt(i) == ':' && str1[j].charAt(i + 1) == ':') {
@@ -451,14 +451,14 @@ public class Mainframe extends JFrame {
 										break;
 									}
 								}
-								if (str1[j].charAt(goingindex + 2) == 'ì§„') {
+								if (str1[j].charAt(goingindex + 2) == 'Áø') {
 									str2[counter] = str1[j];
 									counter++;
 								}
 							}
 							break;
 
-						case 2:// ì´ë¦„ìˆœ
+						case 2:// ÀÌ¸§¼ø
 							for (int j = 0; j < k; j++) {
 								temp[j] = "";
 								for (int i = 0; !(str1[j].charAt(i) == ':' && str1[j].charAt(i + 1) == ':'); i++) {
@@ -486,7 +486,7 @@ public class Mainframe extends JFrame {
 							}	
 							break;
 
-						case 3:// ë§ˆê°ì¼
+						case 3:// ¸¶°¨ÀÏ
 							for (int j = 0; j < k; j++) {
 								temp[j] = " ";
 								for (int i = 0; countindex < 2; i++) {
@@ -519,7 +519,7 @@ public class Mainframe extends JFrame {
 							}	
 							break;
 
-						case 4: // ì™„ë£Œ
+						case 4: // ¿Ï·á
 							for (int j = 0; j < k; j++) {
 								for (int i = 0; i < str1[j].length(); i++) {
 									if (str1[j].charAt(i) == ':' && str1[j].charAt(i + 1) == ':') {
@@ -531,7 +531,7 @@ public class Mainframe extends JFrame {
 										break;
 									}
 								}
-								if (str1[j].charAt(goingindex + 2) == 'ì™„') {
+								if (str1[j].charAt(goingindex + 2) == '¿Ï') {
 									str1[j] = str1[j].replaceFirst("a", " ");
 									str2[counter] = str1[j];
 									counter++;
@@ -539,7 +539,7 @@ public class Mainframe extends JFrame {
 							}
 							break;
 
-						case 5: // ì‹¤ì œë§ˆê°ì¼
+						case 5: // ½ÇÁ¦¸¶°¨ÀÏ
 							for (int j = 0; j < k; j++) {
 								temp[j] = " ";
 								goingindex = 0;
@@ -572,7 +572,7 @@ public class Mainframe extends JFrame {
 							}
 							break;
 						}
-						for (int a = 0; a < counter; a++) {// íŒ¨ë„ ë²„íŠ¼ì¶”ê°€
+						for (int a = 0; a < counter; a++) {// ÆĞ³Î ¹öÆ°Ãß°¡
 							if(str2[a].charAt(0)=='a'){
 								continue;
 							}
@@ -583,11 +583,11 @@ public class Mainframe extends JFrame {
 							conttd.setBorder(new LineBorder(Color.black));
 							for(int i = 0; i<str1[a].length();i++){
 								if(str2[a].charAt(i+1)=='<'&&str2[a].charAt(i+2)=='/'&&str2[a].charAt(i+3)=='h'&&str2[a].charAt(i+4)=='t'&&str2[a].charAt(i+5)=='m'&&str2[a].charAt(i+6)=='l'&&str2[a].charAt(i+7)=='>'){
-									if(str2[a].charAt(i-2)=='ìš°'&&str2[a].charAt(i)=='ìš”'){
+									if(str2[a].charAt(i-2)=='¿ì'&&str2[a].charAt(i)=='¿ä'){
 										conttd.setBackground(Color.RED);
 										break;
 									}
-									else if(str2[a].charAt(i)=='ìš”'){
+									else if(str2[a].charAt(i)=='¿ä'){
 										conttd.setBackground(Color.BLUE);
 										break;
 									}
@@ -660,37 +660,37 @@ public class Mainframe extends JFrame {
 		btnSort.setBounds(303, 10, 70, 30);
 		panel_1.add(btnSort);
 
-		// ê³¼ëª© ê¸¸ì–´ì§ˆ ë•Œ ìŠ¤í¬ë¡¤ ì¶”ê°€
+		// °ú¸ñ ±æ¾îÁú ¶§ ½ºÅ©·Ñ Ãß°¡
 		JScrollPane sptd = new JScrollPane(panel_4, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		sptd.setBounds(12, 61, 356, 189);
 		panel_1.add(sptd);
 		
 
-		///////////////////////////////////// ê¸°íƒ€ ë©”ì¸ ì°½
+		///////////////////////////////////// ±âÅ¸ ¸ŞÀÎ Ã¢
 
-		// ê²€ìƒ‰ì°½
+		// °Ë»öÃ¢
 		textField = new JTextField();
 		textField.setBackground(new Color(255, 255, 255));
 		textField.setBounds(109, 6, 536, 45);
 		contentPane.add(textField);
-		textField.setColumns(10);// ê¸°ëŠ¥ êµ¬í˜„í•˜ê¸°
+		textField.setColumns(10);// ±â´É ±¸ÇöÇÏ±â
 
-		// ê²€ìƒ‰ ì¢…ë¥˜ ì„ íƒ ë°•ìŠ¤
+		// °Ë»ö Á¾·ù ¼±ÅÃ ¹Ú½º
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(14, 10, 81, 37);
-		comboBox.addItem("ê³¼ëª©");
-		comboBox.addItem("í• ì¼");
-		contentPane.add(comboBox);// ê¸°ëŠ¥ êµ¬í˜„ í•˜ê¸°
+		comboBox.addItem("°ú¸ñ");
+		comboBox.addItem("ÇÒÀÏ");
+		contentPane.add(comboBox);// ±â´É ±¸Çö ÇÏ±â
 
-		// ê²€ìƒ‰ ë²„íŠ¼
+		// °Ë»ö ¹öÆ°
 		JButton btnNewButton_1 = new JButton();
 		btnNewButton_1.setBounds(659, 6, 36, 45);
 		btnNewButton_1.setIcon(new ImageIcon("buttons/KakaoTalk_20170518_191846026.png"));
 		contentPane.add(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {// ê²€ìƒ‰ ê¸°ëŠ¥ êµ¬í˜„ í•˜ê¸°
-				if (comboBox.getSelectedItem() == "ê³¼ëª©") {
+			public void actionPerformed(ActionEvent arg0) {// °Ë»ö ±â´É ±¸Çö ÇÏ±â
+				if (comboBox.getSelectedItem() == "°ú¸ñ") {
 					if (textField.getText().equals("")) {
 						panel_3.removeAll();
 						File data = new File("data.dt");
@@ -739,7 +739,7 @@ public class Mainframe extends JFrame {
 								}
 							}
 							if (count == 0) {
-								JLabel nothere = new JLabel("ì°¾ëŠ” ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
+								JLabel nothere = new JLabel("Ã£´Â Á¤º¸°¡ ¾ø½À´Ï´Ù.");
 								panel_3.add(nothere);
 							} else {
 								count = 0;
@@ -893,7 +893,7 @@ public class Mainframe extends JFrame {
 								}
 							}
 							if (count == 0) {
-								JLabel nothere = new JLabel("ì°¾ëŠ” ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.");
+								JLabel nothere = new JLabel("Ã£´Â Á¤º¸°¡ ¾ø½À´Ï´Ù.");
 								panel_4.add(nothere);
 							}
 							panel_4.updateUI();
@@ -907,13 +907,13 @@ public class Mainframe extends JFrame {
 			}
 		});
 
-		// í• ì¼ ì¶”ì²œ ë²„íŠ¼
+		// ÇÒÀÏ ÃßÃµ ¹öÆ°
 		JButton btnNewButton = new JButton();
 		btnNewButton.setBounds(709, 5, 59, 47);
 		btnNewButton.setIcon(new ImageIcon("buttons/KakaoTalk_20170518_191848907.png"));
 		contentPane.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {// RandomFrame í˜¸ì¶œ
+			public void actionPerformed(ActionEvent arg0) {// RandomFrame È£Ãâ
 				RandomFrame rf = new RandomFrame();
 				rf.setVisible(true);
 			}

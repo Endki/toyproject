@@ -35,5 +35,7 @@ public class Model {
 		}
 	}
 	public StringProperty timeProperty() { return time; }
+
 	
+
 }

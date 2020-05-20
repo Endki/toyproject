@@ -2,7 +2,7 @@
 =================
 
 간단한 토이 프로젝트 모음 입니다.
-
+주로 제가 직접 사용하고 싶은 것, 한번 정도 구현해보고 싶었던 것 위주로 할 예정입니다.
 
 1.JAVA SimPle_chat
 -----------------
@@ -21,3 +21,8 @@
 사용 Tool - 이클립스, JavaFX Scene Builder     
 
 Scean Builder - https://m.blog.naver.com/PostView.nhn?blogId=ndb796&logNo=221203295632&proxyReferer=https:%2F%2Fwww.google.com%2F
+
+3. Timer - java
+------------------
+
+자바FX 튜토리얼용 timer          

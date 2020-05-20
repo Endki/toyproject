@@ -1,8 +1,12 @@
 package application;
 	
+import java.awt.SystemTray;
+import java.awt.TrayIcon;
+import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 
-import javafx.animation.PauseTransition;
+import javax.imageio.ImageIO;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,12 +15,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 
 public class Main extends Application implements Runnable {
@@ -43,7 +47,8 @@ public class Main extends Application implements Runnable {
 			primaryStage.sizeToScene(); // Scene의 크기에 알맞게 창 크기 재조정 
 			primaryStage.setTitle("Timer"); // 타이틀 제목 설정 
 			primaryStage.show(); // 창 보이기 
-
+			
+			
 			// 이미지 로딩 등 작업을 완료하지 못했을 경우 프로그램 종료 
 			if (!Init()) {
 				System.exit(0);
@@ -64,17 +69,14 @@ public class Main extends Application implements Runnable {
 			loader.setController(this); // 컨트롤러를 자신으로 설정 
 			Parent root = (Parent) loader.load(); 
 			main = new Scene(root, 500, 400); // 크기 500, 400
-//			textFont = Font.loadFont(this.getClass().getResource("../font/word.ttf").toExternalForm(), 28); // 폰트 이름, 28pt
-//			timeFont = Font.loadFont(this.getClass().getResource("../font/number.ttf").toExternalForm(), 72); // 폰트 이름, 72pt
-
-//			background.setImage(new Image(getClass().getResource("../image/background.png").toString())); // 이미지 불러오기 
-
-//			start_btn.setFont(textFont); // 폰트설정 
+			pause_btn.setDisable(true);
+			
 			start_btn.setOnAction(new EventHandler<ActionEvent>() { // 시작버튼을 눌렀을 때 
 				@Override
 				public void handle(ActionEvent event) {
 					start = true; // 반복 조건 true 
-//					start_btn.setDisable(true); // 시작버튼 비활성화 
+					start_btn.setDisable(true); // 시작버튼 비활성화
+					pause_btn.setDisable(false);
 					t = new Thread(mainClass); // 타이머 쓰레드 생성 
 					t.setDaemon(true); 
 					t.start(); // 쓰레드 시작 
@@ -98,18 +100,18 @@ public class Main extends Application implements Runnable {
 				}
 			});
 			
-			
-			
-//			stop_btn.setFont(textFont);
 			stop_btn.setOnAction(new EventHandler<ActionEvent>() { // 정지버튼을 눌렀을 때 
 				@Override
 				public void handle(ActionEvent event) {
+					flow_time.setText("00 : 00 : 00");
+					start_btn.setDisable(false);
+					pause_btn.setText("pause");
+					pause_btn.setDisable(true);
 					if(t != null) {
 						t.interrupt(); // 쓰레드에 인터럽트 (종료)
 					}
 				}
 			});
-//			flow_time.setFont(timeFont);
 			return true; // 모든 작업이 끝났으면 true 
 		} catch (Exception e) {
 			return false; // 문제가 있으면 false 
